@@ -8,4 +8,4 @@ Renders SCSS and Markdown.
 
 Simply clone, and run <code>yarn install</code>.
 
-<code>yarn run it</code> will compile and start <code>live-server</code>.
+<code>yarn run it</code> will compile to <code>/docs/</code> and start <code>live-server</code>.
