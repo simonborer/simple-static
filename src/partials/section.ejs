@@ -1,0 +1,23 @@
+<section <% if (id !== false) { %>id="<%= id %>"<% } %><% if (style !== false) { %> class="<%= style %>"<% } %>>
+    <div class="grid-x">
+        <div class="cell large-6 large-offset-3 medium-10 medium-offset-1">
+        	<% if (headline) { %><h3><%= headline %></h3><% } %>
+        	<% if (body !== false) { %>
+				<% if (Array.isArray(body)) { %>
+					<% body.forEach(item => { %>
+						<p><%- item %></p>
+					<% }) %>
+				<% } else { %>
+					<p><%- body %></p>
+				<% } %>
+        	<% } %>
+        	<% if (list !== false) { %>
+        		<ol>
+				<% list.forEach(item => { %>
+					<li class="fragment"><%= item %></li>
+				<% }) %>
+				</ol>
+        	<% } %>
+        </div>
+    </div>
+</section>
