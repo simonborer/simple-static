@@ -33,6 +33,8 @@ fse.copy(`${srcPath}/assets`, `${distPath}/assets`, { filter: filterFunc });
 globP('**/*.@(md|ejs|html)', { cwd: `${srcPath}/pages` })
   .then(files => {
     files.forEach(file => {
+      console.log('compiling ' + file);
+
       const fileData = path.parse(file);
       const destPath = path.join(distPath, fileData.dir);
 
@@ -70,13 +72,11 @@ globP('**/*.@(md|ejs|html)', { cwd: `${srcPath}/pages` })
 
           let returnedPage;
 
-            returnedPage = [];
-
-            const ejsPage = ejsRenderFile(
+            returnedPage = ejsRenderFile(
               `${srcPath}/layouts/${layout}.ejs`,
               Object.assign({}, templateConfig, { body: pageContent })
             );
-        
+
           return returnedPage;
         })
         .then(str => {

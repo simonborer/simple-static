@@ -7,8 +7,8 @@
     "build": "node ./scripts/build",
     "build:prod": "cross-env NODE_ENV=production node ./scripts/build prod && gulp prod",
     "serve": "live-server",
-    "deploy": "npm run build:prod && git push origin master",
-    "it": "gulp sass && npm run build && live-server --no-browser"
+    "deploy": "yarn run build:prod && git push origin master",
+    "it": "gulp sass && yarn run build && live-server --no-browser"
   },
   "keywords": [],
   "author": "",
